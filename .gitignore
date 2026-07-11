@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+
+.env
+
+eth_news_bot.db
+
+.vscode/
+
+.idea/
+
+*.log
