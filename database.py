@@ -130,4 +130,3 @@ def latest_news(limit: int = 12):
 def total_count() -> int:
     with connect() as con:
         return con.execute("SELECT COUNT(*) FROM news").fetchone()[0]
-
