@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ETH News Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="ETH News Intelligence">
+        <span class="brand-mark">Ξ</span>
+        <span><strong>ETH News</strong><small>Intelligence</small></span>
+      </a>
+
+      <nav class="nav" aria-label="Основна навігація">
+        <a class="nav-link active" href="#overview"><span>⌁</span> Огляд</a>
+        <a class="nav-link" href="#news"><span>◫</span> Новини</a>
+        <a class="nav-link" href="#analysis"><span>✦</span> AI-аналіз</a>
+        <a class="nav-link" href="#database"><span>◉</span> База даних</a>
+      </nav>
+
+      <div class="bot-status">
+        <div class="status-title"><span class="pulse"></span> Бот працює</div>
+        <p>Остання перевірка новин</p>
+        <strong>щойно</strong>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar" id="overview">
+        <div>
+          <p class="eyebrow">PAPER TRADING DASHBOARD</p>
+          <h1>Ринковий огляд <span>ETH</span></h1>
+          <p class="subtitle">Новини, сигнали та оцінка потенційного впливу в одному місці.</p>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" type="button" aria-label="Оновити">↻</button>
+          <div class="live-chip"><span class="pulse"></span> LIVE</div>
+        </div>
+      </header>
+
+      <section class="metrics" aria-label="Ключові показники">
+        <article class="metric-card featured">
+          <div class="metric-head"><span>ETH / USD</span><span class="trend up">↗ 2.4%</span></div>
+          <div class="price">$3,428.17</div>
+          <div class="sparkline" aria-hidden="true">
+            <svg viewBox="0 0 260 52" preserveAspectRatio="none"><path d="M0 43 C24 45 27 30 47 34 S75 47 94 30 S127 35 143 20 S174 27 193 13 S226 17 260 3"/><path class="fill" d="M0 43 C24 45 27 30 47 34 S75 47 94 30 S127 35 143 20 S174 27 193 13 S226 17 260 3 V52 H0Z"/></svg>
+          </div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-icon violet">◫</div>
+          <div><span class="metric-label">Новин у базі</span><strong>128</strong><small>+12 сьогодні</small></div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-icon green">↗</div>
+          <div><span class="metric-label">Середній sentiment</span><strong class="positive">+0.42</strong><small>Позитивний</small></div>
+        </article>
+        <article class="metric-card">
+          <div class="metric-icon amber">⚡</div>
+          <div><span class="metric-label">Активні сигнали</span><strong>3</strong><small>2 LONG · 1 SHORT</small></div>
+        </article>
+      </section>
+
+      <section class="panel" id="news">
+        <div class="panel-heading">
+          <div><p class="eyebrow">ОСТАННІ ПОДІЇ</p><h2>Стрічка новин</h2></div>
+          <div class="filters">
+            <label class="search"><span>⌕</span><input id="news-search" type="search" placeholder="Пошук новин…"></label>
+            <select id="decision-filter" aria-label="Фільтр рішення">
+              <option value="all">Усі рішення</option><option>LONG</option><option>SHORT</option><option>NO_TRADE</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Час</th><th>Новина</th><th>Категорія</th><th>Score</th><th>Важливість</th><th>Впевненість</th><th>Рішення</th></tr></thead>
+            <tbody id="news-body">
+              <tr data-decision="LONG"><td class="muted">12:48</td><td><button class="story active-story" type="button"><span>BlackRock повідомив про рекордний приплив коштів до Ethereum ETF</span><small>Bloomberg · 4 хв тому</small></button></td><td><span class="category">Institutional</span></td><td><span class="score positive">+65</span></td><td><div class="bar"><i style="--value:75%"></i></div><small>75</small></td><td>85%</td><td><span class="decision long">LONG</span></td></tr>
+              <tr data-decision="NO_TRADE"><td class="muted">12:31</td><td><button class="story" type="button"><span>Аналітики очікують зростання ETH до кінця року</span><small>CoinDesk · 21 хв тому</small></button></td><td><span class="category blue">Forecast</span></td><td><span class="score">+18</span></td><td><div class="bar"><i style="--value:32%"></i></div><small>32</small></td><td>52%</td><td><span class="decision neutral">NO TRADE</span></td></tr>
+              <tr data-decision="SHORT"><td class="muted">11:56</td><td><button class="story" type="button"><span>DeFi-протокол на Ethereum призупинив роботу після експлойту</span><small>The Block · 56 хв тому</small></button></td><td><span class="category red">Security</span></td><td><span class="score negative">−72</span></td><td><div class="bar danger"><i style="--value:88%"></i></div><small>88</small></td><td>91%</td><td><span class="decision short">SHORT</span></td></tr>
+              <tr data-decision="NO_TRADE"><td class="muted">10:42</td><td><button class="story" type="button"><span>Solana представила оновлення продуктивності валідаторів</span><small>Decrypt · 2 год тому</small></button></td><td><span class="category blue">Competitors</span></td><td><span class="score">−4</span></td><td><div class="bar"><i style="--value:14%"></i></div><small>14</small></td><td>78%</td><td><span class="decision neutral">NO TRADE</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="analysis-grid" id="analysis">
+        <article class="panel detail-panel">
+          <div class="panel-heading compact"><div><p class="eyebrow">ОБРАНА НОВИНА</p><h2>Детальний AI-аналіз</h2></div><span class="decision long">LONG</span></div>
+          <h3>BlackRock повідомив про рекордний приплив коштів до Ethereum ETF</h3>
+          <p class="summary">Зростання інституційного попиту через спотовий ETH ETF може підтримати ціну активу в короткостроковій перспективі.</p>
+
+          <div class="analysis-stats">
+            <div><span>Sentiment</span><strong class="positive">Positive</strong><small>+0.65</small></div>
+            <div><span>Напрямок</span><strong class="positive">↑ Up</strong><small>0.5% — 2.5%</small></div>
+            <div><span>Ризик</span><strong class="medium">Medium</strong><small>контрольований</small></div>
+            <div><span>Реакція</span><strong>Hours</strong><small>короткий вплив</small></div>
+          </div>
+
+          <div class="reasoning"><span class="ai-star">✦</span><div><strong>Чому це важливо</strong><p>Подія прямо збільшує доступ інституційного капіталу до ETH. Висока надійність джерела та конкретні дані підтримують позитивний сценарій, хоча частина ефекту вже може бути врахована ринком.</p></div></div>
+
+          <div class="tags"><span>ethereum</span><span>etf</span><span>institutional-money</span><span>blackrock</span></div>
+        </article>
+
+        <aside class="panel signal-panel">
+          <div class="panel-heading compact"><div><p class="eyebrow">ЯКІСТЬ СИГНАЛУ</p><h2>Оцінки</h2></div></div>
+          <div class="radar-score"><div><strong>85</strong><span>/100</span></div><p>Висока впевненість</p></div>
+          <div class="score-list">
+            <div><span>Релевантність <b>92</b></span><div class="progress"><i style="--value:92%"></i></div></div>
+            <div><span>Надійність джерела <b>88</b></span><div class="progress"><i style="--value:88%"></i></div></div>
+            <div><span>Новизна <b>70</b></span><div class="progress"><i style="--value:70%"></i></div></div>
+            <div><span>Терміновість <b>70</b></span><div class="progress amber"><i style="--value:70%"></i></div></div>
+          </div>
+          <div class="probabilities"><div><span>Вже у ціні</span><strong>40%</strong></div><div><span>Імовірність фейку</span><strong class="positive">8%</strong></div></div>
+        </aside>
+      </section>
+
+      <footer><span>ETH News Intelligence · Paper trading only</span><span>Оновлено: 12:52:08</span></footer>
+    </main>
+  </div>
+
+  <script>
+    const search = document.querySelector('#news-search');
+    const filter = document.querySelector('#decision-filter');
+    const rows = [...document.querySelectorAll('#news-body tr')];
+    function filterRows() {
+      const query = search.value.toLowerCase().trim();
+      rows.forEach(row => {
+        const matchesText = row.innerText.toLowerCase().includes(query);
+        const matchesDecision = filter.value === 'all' || row.dataset.decision === filter.value;
+        row.hidden = !(matchesText && matchesDecision);
+      });
+    }
+    search.addEventListener('input', filterRows);
+    filter.addEventListener('change', filterRows);
+  </script>
+</body>
+</html>
